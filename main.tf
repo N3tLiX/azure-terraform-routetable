@@ -40,7 +40,7 @@ resource "azurerm_route" "this" {
 }
 
 resource "azurerm_subnet_route_table_association" "this" {
-  for_each       = var.subnets_to_associate != {} ? var.subnets_to_associate : {}
-  subnet_id      = "/subscriptions/${each.value.subscription_id}/resourceGroups/${each.value.resource_group_name}/providers/Microsoft.Network/virtualNetworks/${each.value.virtual_network_name}/subnets/${each.key}"
+  for_each       = toset(var.subnets_to_associate)
+  subnet_id      = "/subscriptions/${var.subscription_id}/resourceGroups/${var.virtual_network_resource_group_name}/providers/Microsoft.Network/virtualNetworks/${var.virtual_network_name}/subnets/${each.key}"
   route_table_id = azurerm_route_table.this.id
 }

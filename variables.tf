@@ -30,11 +30,21 @@ variable "routes" {
 
 variable "subnets_to_associate" {
   description = "(Optional) Specifies the subscription id, resource group name, and name of the subnets to associate"
-  type        = map(any)
-  default     = {}
+  type        = list(string)
+  default     = []
+}
+
+variable "virtual_network_name" {
+  description = "(Reqired) Specifies the VNET name."
+  type        = string
+}
+
+variable "virtual_network_resource_group_name" {
+  description = "(Reqired) Specifies the VNET name."
+  type        = string
 }
 
 variable "tags" {
-  description = "(Optional) Specifies the tags of the storage account"
+  description = "A map of the tags to use on the resources that are deployed with this module."
   default     = {}
 }
