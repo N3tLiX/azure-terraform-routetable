@@ -1,6 +1,6 @@
-# [Create a simple Azure [MODULE_NAME]]
+# [Create a simple Azure Route Table]
 
-This example consists of a simple terraform deployment to create a simple Azure [MODULE_NAME].
+This example consists of a simple terraform deployment to create a simple Azure Route Table.
 
 - Terraform deployment: script `main.tf`
 
