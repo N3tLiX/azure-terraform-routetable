@@ -28,6 +28,11 @@ variable "routes" {
   }))
 }
 
+variable "subscription_id" {
+  description = "(Required) Specifies Subscription ID."
+  type        = string
+}
+
 variable "subnets_to_associate" {
   description = "(Optional) Specifies the subscription id, resource group name, and name of the subnets to associate"
   type        = list(string)
